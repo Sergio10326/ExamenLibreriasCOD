@@ -2,8 +2,17 @@ package Calculadora;
 
 import java.util.Scanner;
 
+/**
+ * Esta clase contiene el método main para ejecutar una calculadora que permite al usuario ingresar dos números y seleccionar una operación matemática para realizar.
+ */
 public class Main {
 
+    /**
+     * Método principal para ejecutar la calculadora.
+     * Permite al usuario ingresar dos números y seleccionar una operación matemática para realizar con ellos.
+     *
+     * @param args Argumentos de línea de comandos (no se utilizan en este programa)
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,5 +43,6 @@ public class Main {
         scanner.close();
     }
 }
+
 
 

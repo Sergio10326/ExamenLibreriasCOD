@@ -1,36 +1,35 @@
 package Calculadora;
 
 /**
- * Esta libreria se utiliza para hacer operaciones
+ * Esta clase proporciona operaciones básicas de matemáticas.
  */
 public final class Operacion {
     /**
-     * Opcion para elegir Sumar
+     * Opción para elegir Sumar.
      */
     public static final int SUMA = 0;
     /**
-     * Opcion para elegir Restar
+     * Opción para elegir Restar.
      */
     public static final int RESTA = 1;
     /**
-     * Opcion para elegir Multiplicar
+     * Opción para elegir Multiplicar.
      */
     public static final int MULTIPLICACION = 2;
     /**
-     * Opcion para elegir Dividir
+     * Opción para elegir Dividir.
      */
     public static final int DIVISION = 3;
-    /**
-     * Opcion para elegir Raiz de cualquier índice
-     */
-    public static final int RAIZ = 4;
 
     /**
      * Realiza la operación especificada entre dos números.
-     * @param num1 el primer número
-     * @param num2 el segundo número
-     * @param operacion el tipo de operación a realizar
-     * @return el resultado de la operación
+     *
+     * @param num1      El primer número.
+     * @param num2      El segundo número.
+     * @param operacion El tipo de operación a realizar. Debe ser una de las constantes definidas en esta clase (SUMA, RESTA, MULTIPLICACION o DIVISION).
+     * @return El resultado de la operación.
+     * @throws ArithmeticException   Si se intenta dividir por cero.
+     * @throws IllegalArgumentException Si se proporciona un tipo de operación no válido.
      */
     public static double operar(double num1, double num2, int operacion) {
         switch (operacion) {
@@ -45,13 +44,9 @@ public final class Operacion {
                     throw new ArithmeticException("No se puede dividir por cero");
                 }
                 return num1 / num2;
-            case RAIZ:
-                if (num1 < 0 && num2 % 2 == 0) {
-                    throw new ArithmeticException("No se puede calcular la raíz de un número negativo con un índice par");
-                }
-                return Math.pow(num1, 1.0 / num2);
             default:
                 throw new IllegalArgumentException("Operación no válida");
         }
     }
 }
+
